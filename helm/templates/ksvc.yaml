@@ -22,6 +22,7 @@ spec:
       - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         ports:
         - containerPort: {{ .Values.service.internalPort }}
+          protocol: TCP
         env:
 {{- range $pkey, $pval := .Values.env }}
         - name: {{ $pkey }}
