@@ -23,5 +23,5 @@ export const handle = async (
   // const result = await bus.send(command, data)
   // return response.status(result.status).send();
 
-  return response.status(202).send();
+  return response.status(200).send();
 };
