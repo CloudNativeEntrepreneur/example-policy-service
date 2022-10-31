@@ -2,7 +2,8 @@ apiVersion: eventing.knative.dev/v1
 kind: Trigger
 metadata:
   name: policy-todo.initialized
-  argocd.argoproj.io/sync-wave: "-1"
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
 spec:
   broker: todo-events
   filter:
