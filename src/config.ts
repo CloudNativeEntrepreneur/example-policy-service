@@ -8,7 +8,7 @@ export const config = {
       email: {
         commands:
           process.env.EMAIL_COMMANDS_BROKER_URL ||
-          "http://broker-ingress.knative-eventing.svc.cluster.local/default/email-commands",
+          "http://broker-ingress.knative-eventing.svc.cluster.local/example-local-env/email-commands",
       },
     },
     source: "example-policy-service",
