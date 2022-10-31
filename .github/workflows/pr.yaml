@@ -148,6 +148,6 @@ jobs:
           You can verify the PR is ready with `kubectl`:
 
           ```bash
-          kubectl get ksvc -n ${{ github.event.repository.name }}-pr-${{ github.event.pull_request.number }}-preview
+          kubectl get all -n ${{ github.event.repository.name }}-pr-${{ github.event.pull_request.number }}-preview
           ```
         edit-mode: replace
