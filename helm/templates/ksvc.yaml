@@ -17,7 +17,8 @@ spec:
         autoscaling.knative.dev/maxScale: {{ .Values.knative.maxScale | quote }}
     spec:
       containers:
-      - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+      - name: user-container
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         ports:
         - containerPort: {{ .Values.service.internalPort }}
           protocol: TCP
@@ -29,13 +30,16 @@ spec:
         livenessProbe:
           httpGet:
             path: {{ .Values.livenessProbe.probePath | default .Values.probePath }}
+            port: 0
           initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
           periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
           successThreshold: {{ .Values.livenessProbe.successThreshold }}
           timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
         readinessProbe:
+          failureThreshold: 3
           httpGet:
             path: {{ .Values.livenessProbe.probePath | default .Values.probePath }}
+            port: 0
           periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
           successThreshold: {{ .Values.readinessProbe.successThreshold }}
           timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
