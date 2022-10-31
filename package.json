@@ -20,7 +20,7 @@
     "test": "DEBUG=tests,${DEBUG:-example:*} jest --no-cache --config ./jest.json --coverage --verbose"
   },
   "dependencies": {
-    "debug": "4.3.3",
+    "debug": "4.3.4",
     "express": "4.17.3",
     "express-pino-logger": "7.0.0",
     "knativebus": "2.3.13",
