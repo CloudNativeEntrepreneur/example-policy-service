@@ -40,5 +40,6 @@ resources:
 knative:
   minScale: 1
   maxScale: 3
-  eventing:
-    local:
+
+local: false
+localKnativeSubscriber: http://host.docker.internal:5020
