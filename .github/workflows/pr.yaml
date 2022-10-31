@@ -141,13 +141,15 @@ jobs:
         comment-id: ${{ steps.fc.outputs.comment-id }}
         issue-number: ${{ github.event.pull_request.number }}
         body: |
-          Your preview environment has been published! :rocket:
+          Your preview environment has been created in [Example Previews](https://github.com/cloudnativeentrepreneur/example-preview-envs)! :rocket:
 
-          This service doesn't have a public URL.
-
+          If ArgoCD is configured to watch the previews project, then it will be live within the next few minutes.
+      
           You can verify the PR is ready with `kubectl`:
 
           ```bash
           kubectl get all -n ${{ github.event.repository.name }}-pr-${{ github.event.pull_request.number }}-preview
           ```
+
+          This service doesn't have a public URL.
         edit-mode: replace
