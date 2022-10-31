@@ -1,4 +1,0 @@
-env:
-  DEBUG: register-server-handlers*
-
-vaultRole: jx-vault
