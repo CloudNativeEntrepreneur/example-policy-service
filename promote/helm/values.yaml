@@ -1,0 +1,4 @@
+name: web3auth-db
+version: HEAD
+project: dev
+repository: CloudNativeEntrepreneur/web3auth-db

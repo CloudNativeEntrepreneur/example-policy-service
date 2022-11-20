@@ -1,5 +1,6 @@
-pr:
-headRef:
-tag:
-repository:
-  name:
+name: web3auth-db
+pr: pr-0
+headRef: HEAD
+tag: latest
+repository: CloudNativeEntrepreneur/web3auth-db
+project: dev
