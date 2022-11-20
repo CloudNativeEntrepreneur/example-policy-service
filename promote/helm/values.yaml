@@ -1,4 +1,4 @@
-name: web3auth-db
+name: example-policy-service
 version: HEAD
 project: dev
-repository: CloudNativeEntrepreneur/web3auth-db
+repository: CloudNativeEntrepreneur/example-policy-service

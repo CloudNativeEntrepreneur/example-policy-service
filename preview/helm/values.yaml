@@ -1,6 +1,6 @@
-name: web3auth-db
+name: example-policy-service
 pr: pr-0
 headRef: HEAD
 tag: latest
-repository: CloudNativeEntrepreneur/web3auth-db
+repository: CloudNativeEntrepreneur/example-policy-service
 project: dev
