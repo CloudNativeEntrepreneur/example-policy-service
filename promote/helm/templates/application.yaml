@@ -1,20 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .Values.name }}-{{ .Values.pr }}-preview-environment
+  name: {{ .Values.name }}
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: example-preview-envs
+  project: {{ .Values.project }}
   source:
     path: helm
-    repoURL: https://github.com/cloudnativeentrepreneur/environment.git
-    targetRevision: v0.4.0
+    repoURL: https://github.com/{{ .Values.repository }}.git
+    targetRevision: {{ .Values.version }}
     helm:
       version: v3
   destination:
-    namespace: {{ .Values.name }}-{{ .Values.pr }}-preview
+    namespace: {{ .Values.project }}
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
