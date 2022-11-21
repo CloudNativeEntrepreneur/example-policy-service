@@ -3,20 +3,16 @@
 # Declare variables to be passed into your templates.
 image:
   repository: ghcr.io/cloudnativeentrepreneur/example-policy-service
-  tag: latest
+  tag: v0.7.2
   pullPolicy: IfNotPresent
-
 # define environment variables here as a map of key: value
 env:
-
 runIntegrationTests: false
-
 service:
   name: example-policy-service
   type: ClusterIP
   internalPort: 5020
   externalPort: 80
-
 probePath: /health
 livenessProbe:
   initialDelaySeconds: 2
@@ -28,7 +24,6 @@ readinessProbe:
   periodSeconds: 1
   successThreshold: 1
   timeoutSeconds: 1
-
 resources:
   limits:
     cpu: '1'
@@ -36,10 +31,8 @@ resources:
   requests:
     cpu: 200m
     memory: 128Mi
-
 knative:
   minScale: 1
   maxScale: 3
-
 local: false
 localKnativeSubscriber: http://host.docker.internal:5020
