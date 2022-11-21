@@ -13,8 +13,10 @@ spec:
     targetRevision: {{ .Values.version }}
     helm:
       version: v3
+{{- if .Values.values }}
       values: |
         {{ .Values.values | nindent 8 }}
+{{- end }}
   destination:
     namespace: {{ .Values.project }}
     server: https://kubernetes.default.svc
