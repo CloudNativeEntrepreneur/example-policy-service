@@ -18,6 +18,7 @@ jobs:
       project: example-local-env
       pull_request: true
       values: |
+        # Set from promote job of CloudNativeEntrepreneur/example-policy-service
         local: true
 
   promote-prod:
