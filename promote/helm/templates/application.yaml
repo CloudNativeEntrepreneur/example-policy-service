@@ -13,6 +13,7 @@ spec:
     targetRevision: {{ .Values.version }}
     helm:
       version: v3
+      values: {{ .Values.values }}
   destination:
     namespace: {{ .Values.project }}
     server: https://kubernetes.default.svc
